@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Nametags",
+    "description": "Craft nametags with ink, paper, and an iron nugget",
+    "source_folder": "betterr",
+    "recipes": [
+        "nametag"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/nametag.png",
+    "category": "Uncraftables"
+}

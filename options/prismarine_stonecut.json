@@ -1,0 +1,15 @@
+{
+    "display_name": "Stonecut Prismarine Bricks",
+    "description": "Allows primsmarine bricks to be obtained from a stonecutter",
+    "source_folder": "betterr",
+    "recipes": [
+        "prismarine_bricks_stonecut",
+        "prismarine_brick_slab_stonecut",
+        "prismarine_brick_stairs_stonecut"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/prismarine.png",
+    "category": "Stonecutter"
+}

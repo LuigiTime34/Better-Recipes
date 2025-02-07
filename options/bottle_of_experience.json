@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable XP Bottles",
+    "description": "Craft a Bottle O' Enchanting with lapis and dragons breath",
+    "source_folder": "betterr",
+    "recipes": [
+        "bottleoxp"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/bottleoxp.png",
+    "category": "Uncraftables"
+}

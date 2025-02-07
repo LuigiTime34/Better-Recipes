@@ -1,0 +1,16 @@
+{
+    "display_name": "Craftable Chainmail Armor",
+    "description": "Craft chainmail armor with chains and iron nuggets",
+    "source_folder": "betterr",
+    "recipes": [
+        "chainmail_helmet",
+        "chainmail_chestplate",
+        "chainmail_leggings",
+        "chainmail_boots"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/chainmail_chestplate.png",
+    "category": "Uncraftables"
+}

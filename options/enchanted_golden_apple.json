@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Enchanted Golden Apple",
+    "description": "Brings back the old crafting recipes for Enchanted Golden Apples",
+    "source_folder": "betterr",
+    "recipes": [
+        "enchanted_golden_apple"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/enchanted_golden_apple.png",
+	"category": "Legacy"
+}

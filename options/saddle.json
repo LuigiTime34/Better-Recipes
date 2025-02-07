@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Saddles",
+    "description": "Craft saddles with leather, iron and a lead",
+    "source_folder": "betterr",
+    "recipes": [
+        "saddle"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/saddle.png",
+    "category": "Uncraftables"
+}

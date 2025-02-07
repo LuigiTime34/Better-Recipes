@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:experience_bottle"
+        },
+        "title": {
+            "text": "Craftable XP Bottles"
+        },
+        "description": "Craft a Bottle O' Enchanting with lapis and dragons breath",
+        "announce_to_chat": false,
+        "frame": "task",
+        "hidden": true,
+        "show_toast": false
+    },
+    "parent": "betterr:info/uncraftables",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

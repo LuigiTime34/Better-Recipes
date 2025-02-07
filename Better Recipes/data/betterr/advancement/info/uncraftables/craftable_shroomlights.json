@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:shroomlight"
+        },
+        "title": {
+            "text": "Craftable Shroomlights"
+        },
+        "description": "Combine glowstone and a mushroom stem to craft a shroomlight",
+        "announce_to_chat": false,
+        "frame": "task",
+        "hidden": true,
+        "show_toast": false
+    },
+    "parent": "betterr:info/uncraftables",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

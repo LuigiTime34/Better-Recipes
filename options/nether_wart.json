@@ -1,0 +1,13 @@
+{
+    "display_name": "Decraft Nether Wart Block",
+    "description": "Get your nether warts back by decrafting the block",
+    "source_folder": "betterr",
+    "recipes": [
+        "nether_wart"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/nether_wart.png",
+    "category": "Convenience"
+}

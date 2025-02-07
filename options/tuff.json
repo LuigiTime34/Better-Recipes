@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Tuff",
+    "description": "Craft tuff with smooth basalt and deepslate",
+    "source_folder": "betterr",
+    "recipes": [
+        "tuff"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/tuff.png",
+    "category": "Uncraftables"
+}

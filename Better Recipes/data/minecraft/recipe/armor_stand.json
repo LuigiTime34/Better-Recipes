@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "///",
+        " / ",
+        "/_/"
+    ],
+    "key": {
+        "/": "minecraft:stick",
+        "_": "#betterr:stone_slabs"
+    },
+    "result": {
+        "id": "minecraft:armor_stand"
+    }
+}

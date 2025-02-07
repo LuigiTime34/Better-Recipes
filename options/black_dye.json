@@ -1,0 +1,14 @@
+{
+    "display_name": "Black Dye from Coal",
+    "description": "Craft black dye from coal and charcoal",
+    "source_folder": "betterr",
+    "recipes": [
+        "black_dye_coal",
+        "black_dye_charcoal"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/coal_black_dye.png",
+    "category": "Dyes"
+}

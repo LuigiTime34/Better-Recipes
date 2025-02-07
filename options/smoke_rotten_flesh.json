@@ -1,0 +1,13 @@
+{
+    "display_name": "Smoke Rotten Flesh",
+    "description": "Allows you to smelt rotten flesh into leather in a smoker",
+    "source_folder": "betterr",
+    "recipes": [
+        "rotten_flesh_smoke"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/rotten_flesh_smoke.png",
+    "category": "Smelting"
+}

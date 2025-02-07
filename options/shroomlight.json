@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Shroomlights",
+    "description": "Combine glowstone and a mushroom stem to craft a shroomlight",
+    "source_folder": "betterr",
+    "recipes": [
+        "shroomlight"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/shroomlight.png",
+    "category": "Uncraftables"
+}

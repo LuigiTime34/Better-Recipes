@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:red_concrete"
+        },
+        "title": {
+            "text": "Craft Concrete"
+        },
+        "description": "Allows you to craft concrete powder into concrete using water",
+        "announce_to_chat": false,
+        "frame": "task",
+        "hidden": true,
+        "show_toast": false
+    },
+    "parent": "betterr:info/convenience",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

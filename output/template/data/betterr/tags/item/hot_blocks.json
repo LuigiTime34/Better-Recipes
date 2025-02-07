@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:netherrack",
+    "minecraft:blackstone",
+	  "minecraft:basalt",
+	  "minecraft:smooth_basalt",
+	  "minecraft:crimson_nylium",
+	  "minecraft:warped_nylium"
+  ]
+}

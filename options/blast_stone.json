@@ -1,0 +1,15 @@
+{
+    "display_name": "Blast stone",
+    "description": "Allows you to smelt stone and deepslate in a blast furnace",
+    "source_folder": "betterr",
+    "recipes": [
+        "blast_stone",
+        "blast_smooth_stone",
+        "blast_deepslate"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/blast_stone.png",
+    "category": "Smelting"
+}

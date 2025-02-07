@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "dark_prismarine",
+    "ingredients": [
+        "minecraft:prismarine",
+        "minecraft:black_dye",
+        "minecraft:prismarine"
+    ],
+    "result": {
+        "count": 2,
+        "id": "minecraft:dark_prismarine"
+    }
+}

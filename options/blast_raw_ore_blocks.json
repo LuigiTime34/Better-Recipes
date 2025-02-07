@@ -1,0 +1,15 @@
+{
+    "display_name": "Blast Raw Ore Blocks",
+    "description": "Allows you to smelt raw ore blocks in a blast furnace",
+    "source_folder": "betterr",
+    "recipes": [
+        "raw_copper_blast",
+        "raw_iron_blast",
+        "raw_gold_blast"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/blast_copper.png",
+    "category": "Smelting"
+}

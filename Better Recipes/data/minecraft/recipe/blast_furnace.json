@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "III",
+        "IXI",
+        "###"
+    ],
+    "key": {
+        "#": "#betterr:smooth_stone",
+        "X": "minecraft:furnace",
+        "I": "minecraft:iron_ingot"
+    },
+    "result": {
+        "id": "minecraft:blast_furnace"
+    }
+}

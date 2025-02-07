@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Rooted Dirt",
+    "description": "Craft rooted dirt with dirt and hanging roots",
+    "source_folder": "betterr",
+    "recipes": [
+        "rooted_dirt"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/rooted_dirt.png",
+    "category": "Convenience"
+}

@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:rooted_dirt"
+        },
+        "title": {
+            "text": "Craftable Rooted Dirt"
+        },
+        "description": "Craft rooted dirt with dirt and hanging roots",
+        "announce_to_chat": false,
+        "frame": "task",
+        "hidden": true,
+        "show_toast": false
+    },
+    "parent": "betterr:info/convenience",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

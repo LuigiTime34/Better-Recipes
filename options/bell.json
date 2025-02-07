@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Bells",
+    "description": "Allows you to craft bells with gold and sticks",
+    "source_folder": "betterr",
+    "recipes": [
+        "bell"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/bell.png",
+    "category": "Uncraftables"
+}

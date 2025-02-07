@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:chest"
+        },
+        "title": {
+            "text": "Bulk Chests"
+        },
+        "description": "Allows you to bulk craft chests with logs rather than planks",
+        "announce_to_chat": false,
+        "frame": "task",
+        "hidden": true,
+        "show_toast": false
+    },
+    "parent": "betterr:info/convenience",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

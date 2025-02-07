@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Grass Block",
+    "description": "Craft grass with a moss carpet and dirt",
+    "source_folder": "betterr",
+    "recipes": [
+        "grass_block"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/illegal.png",
+    "category": "Uncraftables"
+}

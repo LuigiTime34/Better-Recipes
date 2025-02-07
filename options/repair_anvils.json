@@ -1,0 +1,14 @@
+{
+    "display_name": "Repair Anvils",
+    "description": "Repair damaged and chipped anvils with some more iron",
+    "source_folder": "betterr",
+    "recipes": [
+        "chipped_anvil",
+        "damaged_anvil"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/anvil.png",
+    "category": "Convenience"
+}

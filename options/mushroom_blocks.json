@@ -1,0 +1,15 @@
+{
+    "display_name": "Craftable Mushroom Blocks",
+    "description": "Craft the various mushroom blocks from their respective mushrooms",
+    "source_folder": "betterr",
+    "recipes": [
+        "brown_mushroom_block",
+        "red_mushroom_block",
+        "mushroom_stem"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/mushroom_stem.png",
+    "category": "Uncraftables"
+}

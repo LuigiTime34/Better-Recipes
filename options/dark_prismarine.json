@@ -1,0 +1,13 @@
+{
+    "display_name": "Easier Dark Prismarine",
+    "description": "Makes dark prismarine easier to craft, with only two prismarine instead of eight",
+    "source_folder": "minecraft",
+    "recipes": [
+        "dark_prismarine"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/dark_prismarine.png",
+    "category": "Convenience"
+}

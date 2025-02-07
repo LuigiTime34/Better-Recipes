@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Calcite",
+    "description": "Craft calcite from bone blocks and coal",
+    "source_folder": "betterr",
+    "recipes": [
+        "calcite"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/calcite.png",
+    "category": "Uncraftables"
+}

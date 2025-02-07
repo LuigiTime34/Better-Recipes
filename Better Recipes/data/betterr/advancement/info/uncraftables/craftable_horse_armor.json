@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:diamond_horse_armor"
+        },
+        "title": {
+            "text": "Craftable Horse armor"
+        },
+        "description": "Allows you to craft the other horse armor types, iron gold and diamond",
+        "announce_to_chat": false,
+        "frame": "task",
+        "hidden": true,
+        "show_toast": false
+    },
+    "parent": "betterr:info/uncraftables",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

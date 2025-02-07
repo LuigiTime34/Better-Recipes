@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:glow_ink_sac"
+        },
+        "title": {
+            "text": "Craftable Glow Ink Sac"
+        },
+        "description": "Craft Glow Ink sacs from regular ink sacs and glowstone dust",
+        "announce_to_chat": false,
+        "frame": "task",
+        "hidden": true,
+        "show_toast": false
+    },
+    "parent": "betterr:info/uncraftables",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

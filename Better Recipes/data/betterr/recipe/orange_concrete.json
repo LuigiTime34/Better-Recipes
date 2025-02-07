@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "concrete",
+    "pattern": [
+        "###",
+        "#W#",
+        "###"
+    ],
+    "key": {
+        "W": "minecraft:water_bucket",
+        "#": "minecraft:orange_concrete_powder"
+    },
+    "result": {
+        "count": 8,
+        "id": "minecraft:orange_concrete"
+    }
+}

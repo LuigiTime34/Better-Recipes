@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:armor_stand"
+        },
+        "title": {
+            "text": "Stone Compatibility"
+        },
+        "description": "Makes various blocks that require stone also use be able to be crafted with stone-like materials",
+        "announce_to_chat": false,
+        "frame": "task",
+        "hidden": true,
+        "show_toast": false
+    },
+    "parent": "betterr:info/convenience",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

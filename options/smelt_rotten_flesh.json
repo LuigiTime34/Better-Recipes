@@ -1,0 +1,13 @@
+{
+    "display_name": "Smelt Rotten Flesh",
+    "description": "Allows you to smelt rotten flesh into leather",
+    "source_folder": "betterr",
+    "recipes": [
+        "rotten_flesh_regular"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/rotten_flesh_smelt.png",
+    "category": "Smelting"
+}

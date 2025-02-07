@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Trident",
+    "description": "Allows you to craft a trident with prismarine shards and crystals",
+    "source_folder": "betterr",
+    "recipes": [
+        "trident"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/trident.png",
+    "category": "Uncraftables"
+}

@@ -1,0 +1,13 @@
+{
+    "display_name": "Cheaper Hopper",
+    "description": "Makes hoppers no longer require chests",
+    "source_folder": "minecraft",
+    "recipes": [
+        "hopper"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/hopper.png",
+	"category": "Convenience"
+}

@@ -1,0 +1,15 @@
+{
+    "display_name": "Smelt Raw Ore Blocks",
+    "description": "Allows you to smelt raw ore blocks into the smelted block",
+    "source_folder": "betterr",
+    "recipes": [
+        "raw_copper_regular",
+        "raw_iron_regular",
+        "raw_gold_regular"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/raw_iron_smelt.png",
+    "category": "Smelting"
+}

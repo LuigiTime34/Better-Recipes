@@ -1,0 +1,13 @@
+{
+    "display_name": "Redstone to Red Dye",
+    "description": "Allows redstone to be crafted into red dye",
+    "source_folder": "betterr",
+    "recipes": [
+        "red_dye"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/red_dye_redstone.png",
+    "category": "Dyes"
+}

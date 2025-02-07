@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Crying Obsidian",
+    "description": "Craft Crying Obsidian with ghast tears and obsidian",
+    "source_folder": "betterr",
+    "recipes": [
+        "crying_obsidian"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/crying_obi.png",
+    "category": "Uncraftables"
+}

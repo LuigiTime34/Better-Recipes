@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Glow Ink Sac",
+    "description": "Craft Glow Ink sacs from regular ink sacs and glowstone dust",
+    "source_folder": "betterr",
+    "recipes": [
+        "glow_ink_sac"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/glow_ink_sac.png",
+    "category": "Uncraftables"
+}

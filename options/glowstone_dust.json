@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Glowstone Dust",
+    "description": "Craft glowstone from glow berries",
+    "source_folder": "betterr",
+    "recipes": [
+        "glow_berries"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/glow_berries_to_dust.png",
+    "category": "Uncraftables"
+}

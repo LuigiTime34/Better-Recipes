@@ -1,0 +1,15 @@
+{
+    "display_name": "Cyan Dye from Warped Foilage",
+    "description": "Craft cyan dye from the various warped foilage",
+    "source_folder": "betterr",
+    "recipes": [
+        "cyan_dye_from_nether_sprouts",
+        "cyan_dye_from_twisting_vines",
+        "cyan_dye_from_warped_roots"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/cyan_dye_from_twisting_vines.png",
+    "category": "Dyes"
+}

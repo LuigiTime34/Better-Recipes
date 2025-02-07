@@ -1,0 +1,15 @@
+{
+    "display_name": "Shapeless",
+    "description": "Makes some various recipes shapeless, such as Bread and Paper",
+    "source_folder": "minecraft",
+    "recipes": [
+        "bread",
+        "cookie",
+        "paper"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/cookie.png",
+	"category": "Convenience"
+}

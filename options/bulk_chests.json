@@ -1,0 +1,13 @@
+{
+    "display_name": "Bulk Chests",
+    "description": "Allows you to bulk craft chests with logs rather than planks",
+    "source_folder": "betterr",
+    "recipes": [
+        "bulk_chest"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/bulk_chest.png",
+    "category": "Convenience"
+}

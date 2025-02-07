@@ -1,0 +1,27 @@
+{
+    "display_name": "Stone Compatibility",
+    "description": "Makes various blocks that require stone also use be able to be crafted with stone-like materials",
+    "source_folder": "minecraft",
+    "recipes": [
+        "armor_stand",
+        "blast_furnace",
+        "comparator",
+        "detector_rail",
+        "dropper",
+        "grindstone",
+        "lever",
+        "magma_block",
+        "observer",
+        "repeater",
+        "stonecutter"
+    ],
+    "tags": [
+        "hot_blocks",
+        "polished_blocks",
+        "pressure_plates",
+        "smooth_stone",
+        "stone_slabs"
+    ],
+    "image_path": "options/images/dropper.png",
+	"category": "Convenience"
+}

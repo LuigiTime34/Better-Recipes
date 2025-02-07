@@ -1,0 +1,13 @@
+{
+    "display_name": "Stonecut Cobblestone",
+    "description": "Stonecut stone into cobblestone",
+    "source_folder": "betterr",
+    "recipes": [
+        "cobblestone"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/stonecut_cobblestone.png",
+    "category": "Stonecutter"
+}

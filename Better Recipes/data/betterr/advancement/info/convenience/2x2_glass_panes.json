@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:red_stained_glass"
+        },
+        "title": {
+            "text": "2x2 Glass Panes"
+        },
+        "description": "Makes all glass panes require four of their respective glass color",
+        "announce_to_chat": false,
+        "frame": "task",
+        "hidden": true,
+        "show_toast": false
+    },
+    "parent": "betterr:info/convenience",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

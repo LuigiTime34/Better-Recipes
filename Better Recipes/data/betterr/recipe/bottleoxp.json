@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:lapis_lazuli",
+        "minecraft:dragon_breath"
+    ],
+    "result": {
+        "count": 1,
+        "id": "minecraft:experience_bottle"
+    }
+}

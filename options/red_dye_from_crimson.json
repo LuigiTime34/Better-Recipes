@@ -1,0 +1,15 @@
+{
+    "display_name": "Red Dye from Crimson Foilage",
+    "description": "Craft red dye from the various crimson foilage",
+    "source_folder": "betterr",
+    "recipes": [
+        "red_dye_from_nether_wart",
+        "red_dye_from_weeping_vines",
+        "red_dye_from_crimson_roots"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/red_dye_from_weeping_vines.png",
+    "category": "Dyes"
+}

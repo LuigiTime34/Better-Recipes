@@ -1,0 +1,15 @@
+{
+    "display_name": "Craftable Horse armor",
+    "description": "Allows you to craft the other horse armor types, iron gold and diamond",
+    "source_folder": "betterr",
+    "recipes": [
+        "iron_horse_armor",
+        "gold_horse_armor",
+        "diamond_horse_armor"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/horse_armor.png",
+    "category": "Uncraftables"
+}

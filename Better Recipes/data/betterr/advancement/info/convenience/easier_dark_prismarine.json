@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:dark_prismarine"
+        },
+        "title": {
+            "text": "Easier Dark Prismarine"
+        },
+        "description": "Makes dark prismarine easier to craft, with only two prismarine instead of eight",
+        "announce_to_chat": false,
+        "frame": "task",
+        "hidden": true,
+        "show_toast": false
+    },
+    "parent": "betterr:info/convenience",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "display_name": "Cheaper Chains",
+    "description": "Makes chains require three iron nuggets, rather than two and an iron ingot",
+    "source_folder": "minecraft",
+    "recipes": [
+        "chain"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/chain.png",
+	"category": "Convenience"
+}

@@ -1,0 +1,13 @@
+{
+    "display_name": "Old Bundle",
+    "description": "Changes the bundle recipe back to what it originally was with rabbit hide",
+    "source_folder": "minecraft",
+    "recipes": [
+        "bundle"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/old_bundle.png",
+    "category": "Legacy"
+}

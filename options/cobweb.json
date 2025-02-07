@@ -1,0 +1,13 @@
+{
+    "display_name": "Craftable Cobwebs",
+    "description": "Craft cobwebs from string",
+    "source_folder": "betterr",
+    "recipes": [
+        "cobweb"
+    ],
+    "tags": [
+        null
+    ],
+    "image_path": "options/images/cobweb.png",
+    "category": "Uncraftables"
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:smooth_stone_slab",
+    "minecraft:polished_blackstone_slab",
+	  "minecraft:polished_deepslate_slab"
+  ]
+}
