@@ -7,17 +7,21 @@
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta property="og:title" content="Better Recipes">
+  <meta property="og:description" content="Choose various recipes to add to your Minecraft world!">
+  <meta property="og:url" content="https://luigitime34.pythonanywhere.com/">
+  <meta property="og:type" content="website">
 </head>
 <body>
   <!-- Help Button positioned at top right -->
   <button class="help-button" onclick="showHelp()">?</button>
-  
+
   <div class="container">
     <div class="title-section">
       <!-- Title image instead of text. Place your image at static/title.png -->
       <img src="{{ url_for('static', filename='title.png') }}" alt="Title" class="title-image">
     </div>
-    
+
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         <div class="flash">
@@ -27,8 +31,8 @@
         </div>
       {% endif %}
     {% endwith %}
-    
-    
+
+
     <!-- Search bar, select/deselect buttons and selected count -->
     <div class="search-section">
       <input type="text" id="searchBar" placeholder="Search recipes...">
@@ -36,7 +40,7 @@
       <button type="button" onclick="deselectAll()">Deselect All</button>
       <span id="selected-count">Selected: 0</span>
     </div>
-    
+
     <div class="options-section">
       <form id="create-form" method="post">
         {% for category, options in options_by_category.items() %}
@@ -47,9 +51,9 @@
             </summary>
             <div class="grid-container">
               {% for option in options %}
-                <div class="grid-item" 
+                <div class="grid-item"
                      data-id="{{ option.id }}"
-                     data-description="{{ option.description|escape }}" 
+                     data-description="{{ option.description|escape }}"
                      data-name="{{ option.display_name }}"
                      data-image="{{ url_for('static', filename=option.image_path) }}"
                      onclick="toggleSelection(this, '{{ option.id }}')">
@@ -63,12 +67,12 @@
         {% endfor %}
       </form>
     </div>
-    
+
     <div class="preview-section">
       <h2>Preview</h2>
       <div id="preview-description">Hover over a recipe to see its details</div>
       <img id="preview-image" src="" alt="PREVIEW" class="preview-image" style="display: none;">
-      
+
       <div class="selected-items">
         <h3>Selected Recipes (<span id="selected-items-count">0</span>)</h3>
         <ul id="selected-list"></ul>
@@ -77,21 +81,27 @@
         <button type="submit" form="create-form" class="download-button">Download Datapack</button>
       </div>
     </div>
-    
+
     <!-- Import Datapack form moved below the download button -->
     <form class="import-form" method="post" enctype="multipart/form-data">
       <h2>Import Datapack</h2>
       <input type="file" name="import_zip" accept=".zip">
-      <button type="submit" class="download-button">Import Datapack</button>
+      <div class="import-buttons">
+        <button type="submit" class="download-button">Import Datapack</button>
+        <button class="import-help-button" data-tooltip="Use the import tool to edit a previously made Datapack from this website.">?</button>
+      </div>
     </form>
-    
+
+
+
+
     <div class="footer">
       <a href="https://github.com/LuigiTime34" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       <a href="https://modrinth.com/user/LuigiTime34" target="_blank"><i class="fas fa-cube"></i> Modrinth</a>
       <a href="https://www.planetminecraft.com/member/luigitime34/" target="_blank"><i class="fas fa-globe"></i> Planet Minecraft</a>
     </div>
   </div>
-  
+
   <!-- Help Modal and Overlay -->
   <div class="modal-overlay" id="overlay"></div>
   <div class="help-modal" id="helpModal">
@@ -104,9 +114,9 @@
     <p>5. You can also import an pre-made datapack using the Import feature below the download button.</p>
     <p>6. Use the Preset dropdown to automatically select a predefined group of recipes.</p>
   </div>
-  
+
   <script>
-    
+
     function showHelp() {
       const overlay = document.getElementById('overlay');
       const helpModal = document.getElementById('helpModal');
@@ -115,20 +125,20 @@
       // Add a fade-in animation class
       helpModal.classList.add('animate-fade-in');
     }
-    
+
     function hideHelp() {
       document.getElementById('overlay').classList.remove('show');
       document.getElementById('helpModal').classList.remove('show');
       document.getElementById('helpModal').classList.remove('animate-fade-in');
     }
-    
+
     function toggleSelection(element, optionId) {
       element.classList.toggle('selected');
       const checkbox = element.querySelector('input[type="checkbox"]');
       checkbox.checked = !checkbox.checked;
       updateSelectedList();
     }
-    
+
     function updateSelectedList() {
       const selectedList = document.getElementById('selected-list');
       selectedList.innerHTML = '';
@@ -142,13 +152,13 @@
       document.getElementById('selected-items-count').textContent = count;
       document.getElementById('selected-count').textContent = 'Selected: ' + count;
     }
-    
+
     // Set up hover preview for grid items.
     document.querySelectorAll('.grid-item').forEach(function(item) {
       if (item.querySelector('input[type="checkbox"]').checked) {
         item.classList.add('selected');
       }
-      
+
       item.addEventListener('mouseenter', function() {
         const description = item.getAttribute('data-description');
         const imageSrc = item.getAttribute('data-image');
@@ -158,7 +168,7 @@
         previewImg.style.display = 'block';
       });
     });
-    
+
     // Search functionality
     document.getElementById('searchBar').addEventListener('keyup', function() {
       const query = this.value.toLowerCase();
@@ -171,7 +181,7 @@
         }
       });
     });
-    
+
     function selectAll() {
       document.querySelectorAll('.grid-item').forEach(item => {
         item.classList.add('selected');
@@ -179,7 +189,7 @@
       });
       updateSelectedList();
     }
-    
+
     function deselectAll() {
       document.querySelectorAll('.grid-item').forEach(item => {
         item.classList.remove('selected');
@@ -187,7 +197,7 @@
       });
       updateSelectedList();
     }
-    
+
     // Animate <details> opening and closing
     document.querySelectorAll("details").forEach(detail => {
       const summary = detail.querySelector("summary");
@@ -224,50 +234,50 @@
         }
       });
     });
-    
+
     updateSelectedList();
 
       // Create and setup progress ring SVG
     function createProgressRing(button) {
       const ring = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       ring.setAttribute('class', 'progress-ring');
-      
+
       // Get button dimensions
       const buttonRect = button.getBoundingClientRect();
       const size = Math.min(buttonRect.height, buttonRect.width);
       const strokeWidth = 2;
       const radius = (size / 2) - strokeWidth;
       const circumference = radius * 2 * Math.PI;
-      
+
       // Set viewBox and size
       ring.setAttribute('width', size);
       ring.setAttribute('height', size);
       ring.setAttribute('viewBox', `0 0 ${size} ${size}`);
-      
+
       ring.innerHTML = `
-        <circle r="${radius}" cx="${size/2}" cy="${size/2}" 
+        <circle r="${radius}" cx="${size/2}" cy="${size/2}"
                 stroke-dasharray="${circumference} ${circumference}"
                 stroke-dashoffset="${circumference}" />
       `;
-      
+
       return ring;
     }
 
     // Update the create form submission handler
     document.getElementById('create-form').onsubmit = async function(e) {
       e.preventDefault();
-      
+
       const button = document.querySelector('.download-button');
       const spinner = document.createElement('div');
       spinner.className = 'spinner';
-      
+
       // Create and add progress ring if it doesn't exist
       let ring = button.querySelector('.progress-ring');
       if (!ring) {
         ring = createProgressRing(button);
         button.appendChild(ring);
       }
-      
+
       try {
         // Start animation
         button.disabled = true;
@@ -276,36 +286,36 @@
         spinner.style.display = 'block';
         const originalText = button.textContent;
         button.textContent = 'Generating...';
-        
+
         // Animate progress ring
         const circle = ring.querySelector('circle');
         const radius = parseFloat(circle.getAttribute('r'));
         const circumference = radius * 2 * Math.PI;
         let progress = 0;
-        
+
         const progressInterval = setInterval(() => {
           progress += 2;
           const offset = circumference - (progress / 100) * circumference;
           circle.style.strokeDashoffset = offset;
           if (progress >= 100) clearInterval(progressInterval);
         }, 20);
-        
+
         // Submit form
         const formData = new FormData(this);
         const response = await fetch(window.location.href, {
           method: 'POST',
           body: formData
         });
-        
+
         if (!response.ok) throw new Error('Download failed');
-        
+
         // Success animation
         clearInterval(progressInterval);
         circle.style.strokeDashoffset = 0;
         button.classList.remove('loading');
         button.classList.add('success');
         button.textContent = 'Download Starting...';
-        
+
         // Handle the blob response
         const blob = await response.blob();
         const url = window.URL.createObjectURL(blob);
@@ -316,7 +326,7 @@
         a.click();
         window.URL.revokeObjectURL(url);
         document.body.removeChild(a);
-        
+
         // Reset button after short delay
         setTimeout(() => {
           button.disabled = false;
@@ -325,13 +335,13 @@
           spinner.style.display = 'none';
           if (ring) ring.remove();
         }, 1000);
-        
+
       } catch (error) {
         // Error animation
         button.classList.remove('loading');
         button.classList.add('error');
         button.textContent = 'Error! Try Again';
-        
+
         setTimeout(() => {
           button.disabled = false;
           button.classList.remove('error');

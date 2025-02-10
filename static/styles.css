@@ -8,6 +8,18 @@ body {
   background-color: #333333;
 }
 
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0%;
+  left: 25%;
+  width: 800px;
+  height: 800px;
+  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+  z-index: -1;
+}
+
 /* Background image with slight blur */
 body::before {
   content: '';
@@ -20,7 +32,7 @@ body::before {
   background-size: cover;
   background-position: center;
   opacity: 1;
-  filter: blur(2px);
+  filter: blur(1px);
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   transform: translate(-50%, -50%);
@@ -371,6 +383,52 @@ h2 {
 
 .search-section button:hover {
   background: #6b8e23;
+}
+
+.import-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  align-items: center;
+}
+
+.import-help-button {
+  background: #8FBC8F;
+  color: #ffffff;
+  border: 2px solid #6b8e23;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.import-help-button:hover {
+  background: #a2d5a2;
+}
+
+/* Tooltip styling */
+.import-help-button::after {
+  content: attr(data-tooltip);
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 120%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(60, 60, 60, 0.95);
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  border: 1px solid #5c5c5c;
+}
+
+.import-help-button:hover::after {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Help modal fade-in animation */
