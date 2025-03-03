@@ -66,41 +66,168 @@ def create_datapack(output_path, selected_options):
     """
     better_recipes_path = os.path.join(BASE_DIR, "Better Recipes")
     
+    # Ensure the output directory exists
+    os.makedirs(output_path, exist_ok=True)
+    
+    # First, check if the Better Recipes directory exists
+    if not os.path.exists(better_recipes_path):
+        logging.error(f"Better Recipes directory not found at: {better_recipes_path}")
+        raise FileNotFoundError(f"Better Recipes directory not found at: {better_recipes_path}")
+    
+    # Copy pack.mcmeta file
+    pack_mcmeta_src = os.path.join(better_recipes_path, "pack.mcmeta")
+    if os.path.exists(pack_mcmeta_src):
+        shutil.copy2(pack_mcmeta_src, os.path.join(output_path, "pack.mcmeta"))
+        logging.info(f"Copied pack.mcmeta from {pack_mcmeta_src}")
+    else:
+        # Create a default pack.mcmeta
+        default_mcmeta = {
+            "pack": {
+                "pack_format": 61,
+                "description": "https://luigitime34.pythonanywhere.com/"
+            }
+        }
+        with open(os.path.join(output_path, "pack.mcmeta"), 'w', encoding='utf-8') as f:
+            json.dump(default_mcmeta, f, indent=4)
+        logging.info("Created default pack.mcmeta")
+    
     # Create necessary directories
-    os.makedirs(os.path.join(output_path, "data", "betterr", "recipes"), exist_ok=True)
-    os.makedirs(os.path.join(output_path, "data", "minecraft", "recipes"), exist_ok=True)
-    os.makedirs(os.path.join(output_path, "data", "betterr", "advancements"), exist_ok=True)
-    os.makedirs(os.path.join(output_path, "data", "minecraft", "advancements"), exist_ok=True)
-
+    for namespace in ['betterr', 'minecraft']:
+        os.makedirs(os.path.join(output_path, "data", namespace, "recipe"), exist_ok=True)
+        os.makedirs(os.path.join(output_path, "data", namespace, "advancement", "info"), exist_ok=True)
+    
     # Write selected recipes to file
     selected_names = [opt['display_name'] for opt in selected_options]
     with open(os.path.join(output_path, 'SELECTED_RECIPES.txt'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(selected_names))
-
+    
+    # Log the selected options
+    logging.info(f"Selected options: {selected_options}")
+    
     # Copy recipes and advancements
+    recipes_copied = 0
+    advancements_copied = 0
+    
+    # Collect all selected recipe IDs and categories
+    all_selected_recipes = []
+    selected_categories = set()
     for option in selected_options:
-        category = option.get("category", "Uncategorized").lower()
-        
+        all_selected_recipes.extend(option.get('recipes', []))
+        selected_categories.add(option.get("category", "Uncategorized").lower())
+    
+    # First, copy all selected recipes
+    for option in selected_options:
         for recipe in option.get('recipes', []):
-            # Handle betterr namespace
+            logging.info(f"Processing recipe: {recipe}")
+            
+            # Handle both namespaces
             for namespace in ['betterr', 'minecraft']:
-                recipe_src = os.path.join(better_recipes_path, "data", namespace, "recipes", f"{recipe}.json")
-                recipe_dest = os.path.join(output_path, "data", namespace, "recipes", f"{recipe}.json")
+                recipe_src = os.path.join(better_recipes_path, "data", namespace, "recipe", f"{recipe}.json")
+                recipe_dest = os.path.join(output_path, "data", namespace, "recipe", f"{recipe}.json")
                 
                 if os.path.exists(recipe_src):
                     os.makedirs(os.path.dirname(recipe_dest), exist_ok=True)
                     shutil.copy2(recipe_src, recipe_dest)
-
-                # Copy advancements if they exist
-                adv_src = os.path.join(better_recipes_path, "data", namespace, "advancements", "info", category)
-                adv_dest = os.path.join(output_path, "data", namespace, "advancements", "info", category)
-                
-                if os.path.exists(adv_src):
-                    if os.path.isdir(adv_src):
-                        shutil.copytree(adv_src, adv_dest, dirs_exist_ok=True)
-                    else:
-                        os.makedirs(os.path.dirname(adv_dest), exist_ok=True)
-                        shutil.copy2(adv_src, adv_dest)
+                    recipes_copied += 1
+                    logging.info(f"Copied recipe: {recipe_src} to {recipe_dest}")
+                else:
+                    logging.warning(f"Recipe not found: {recipe_src}")
+    
+    # Now, copy necessary advancement files and folders
+    for category in selected_categories:
+        logging.info(f"Processing advancements for category: {category}")
+        
+        for namespace in ['betterr', 'minecraft']:
+            # Copy root.json if it exists
+            root_adv_paths = [
+                os.path.join(better_recipes_path, "data", namespace, "advancement", "root.json"),
+                os.path.join(better_recipes_path, "data", namespace, "advancement", "info", "root.json")
+            ]
+            
+            for root_path in root_adv_paths:
+                if os.path.exists(root_path):
+                    rel_path = os.path.relpath(root_path, os.path.join(better_recipes_path, "data", namespace, "advancement"))
+                    dest_path = os.path.join(output_path, "data", namespace, "advancement", rel_path)
+                    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                    shutil.copy2(root_path, dest_path)
+                    advancements_copied += 1
+                    logging.info(f"Copied root advancement: {root_path} to {dest_path}")
+            
+            # Check for both category advancement files and directories
+            # 1. Category-specific JSON file
+            category_file_paths = [
+                os.path.join(better_recipes_path, "data", namespace, "advancement", f"{category}.json"),
+                os.path.join(better_recipes_path, "data", namespace, "advancement", "info", f"{category}.json")
+            ]
+            
+            for cat_path in category_file_paths:
+                if os.path.exists(cat_path):
+                    rel_path = os.path.relpath(cat_path, os.path.join(better_recipes_path, "data", namespace, "advancement"))
+                    dest_path = os.path.join(output_path, "data", namespace, "advancement", rel_path)
+                    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                    shutil.copy2(cat_path, dest_path)
+                    advancements_copied += 1
+                    logging.info(f"Copied category advancement file: {cat_path} to {dest_path}")
+            
+            # 2. Category-specific directories
+            category_dir_paths = [
+                os.path.join(better_recipes_path, "data", namespace, "advancement", category),
+                os.path.join(better_recipes_path, "data", namespace, "advancement", "info", category)
+            ]
+            
+            for cat_dir in category_dir_paths:
+                if os.path.exists(cat_dir) and os.path.isdir(cat_dir):
+                    # Instead of copying the whole directory, copy only advancement files
+                    # that correspond to selected recipes
+                    for root, _, files in os.walk(cat_dir):
+                        for file in files:
+                            if file.endswith('.json'):
+                                file_base = os.path.splitext(file)[0]
+                                file_path = os.path.join(root, file)
+                                
+                                # Check if this file matches a recipe ID or is critical to the advancement tree
+                                should_copy = False
+                                
+                                # Copy if filename matches a recipe ID
+                                if file_base in all_selected_recipes:
+                                    should_copy = True
+                                    logging.info(f"Advancement file {file} matches recipe ID {file_base}")
+                                
+                                # Copy if it appears to be an important category file
+                                elif file_base in ["root", category, f"{category}_root"]:
+                                    should_copy = True
+                                    logging.info(f"Copying essential category advancement file: {file}")
+                                
+                                # Otherwise, check if its content references any of our recipes
+                                else:
+                                    try:
+                                        with open(file_path, 'r', encoding='utf-8') as f:
+                                            content = f.read()
+                                            
+                                        for recipe_id in all_selected_recipes:
+                                            if recipe_id in content:
+                                                should_copy = True
+                                                logging.info(f"Advancement file {file} references recipe {recipe_id}")
+                                                break
+                                    except Exception as e:
+                                        logging.warning(f"Error reading advancement file {file}: {str(e)}")
+                                
+                                if should_copy:
+                                    rel_path = os.path.relpath(file_path, os.path.join(better_recipes_path, "data", namespace, "advancement"))
+                                    dest_path = os.path.join(output_path, "data", namespace, "advancement", rel_path)
+                                    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                                    shutil.copy2(file_path, dest_path)
+                                    advancements_copied += 1
+                                    logging.info(f"Copied advancement file: {file_path} to {dest_path}")
+    
+    logging.info(f"Datapack creation completed. Copied {recipes_copied} recipes and {advancements_copied} advancements.")
+    
+    # Return information about what was copied
+    return {
+        "recipes_copied": recipes_copied,
+        "advancements_copied": advancements_copied,
+        "selected_options": len(selected_options)
+    }
 
 def create_zip_in_memory(directory_path):
     """
@@ -108,10 +235,11 @@ def create_zip_in_memory(directory_path):
     """
     memory_file = io.BytesIO()
     with zipfile.ZipFile(memory_file, 'w', zipfile.ZIP_DEFLATED) as zf:
-        for root, _, files in os.walk(directory_path):
+        for root, dirs, files in os.walk(directory_path):
             for file in files:
                 file_path = os.path.join(root, file)
                 arcname = os.path.relpath(file_path, directory_path)
+                logging.info(f"Adding to ZIP: {file_path} as {arcname}")
                 zf.write(file_path, arcname)
     memory_file.seek(0)
     return memory_file

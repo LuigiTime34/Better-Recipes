@@ -9,25 +9,14 @@ body {
 }
 
 
-body::after {
-  content: '';
-  position: fixed;
-  top: 0%;
-  left: 25%;
-  width: 800px;
-  height: 800px;
-  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
-  z-index: -1;
-}
-
 /* Background image with slight blur */
 body::before {
   content: '';
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 800px;
-  height: 800px;
+  width: 600px;
+  height:600px;
   background-image: url('/static/crafting_table_top.png');
   background-size: cover;
   background-position: center;
