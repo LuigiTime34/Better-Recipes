@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "better-recipes",
     "version": "1.0.0",
     "main": "index.js",
@@ -13,3 +14,19 @@
       "typescript": "^5.8.2"
     }
   }
+=======
+  "name": "better-recipes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
+>>>>>>> ebc614f97d13cbddac1e8359b808a0929caf8306
