@@ -1,14 +1,12 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#G"
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:mushroom_stem",
+        "minecraft:glowstone"
     ],
-    "key": {
-        "#": "minecraft:mushroom_stem",
-        "G": "minecraft:glowstone"
-    },
     "result": {
         "count": 2,
         "id": "minecraft:shroomlight"
-    }
+    },
+    "category": "building"
 }

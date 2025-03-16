@@ -13,5 +13,6 @@
     "result": {
         "count": 8,
         "id": "minecraft:green_concrete"
-    }
+    },
+    "category": "building"
 }

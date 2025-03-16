@@ -1,0 +1,32 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_orange_concrete_powder": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "orange_concrete_powder"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "betterr:orange_concrete"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
+    },
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_orange_concrete_powder"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "betterr:orange_concrete"
+        ]
+    }
+}

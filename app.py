@@ -18,7 +18,7 @@ logging.basicConfig(
 )
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"  # Change this to a secure value
+app.secret_key = "your_secret_key"
 
 # Set up rate limiting
 limiter = Limiter(key_func=get_remote_address, default_limits=["10 per minute"])
@@ -302,6 +302,39 @@ def create_datapack(output_path, selected_options):
                         logging.warning(f"Category folder not found: {src_category_path}")
             else:
                 logging.warning(f"Original info directory not found: {original_info_path}")
+
+        # Copy recipe advancements from betterr namespace only
+        recipes_adv_src = os.path.join(better_recipes_path, "data", "betterr", "advancement", "recipes")
+        recipes_adv_dest = os.path.join(output_path, "data", "betterr", "advancement", "recipes")
+
+        if os.path.exists(recipes_adv_src) and os.path.isdir(recipes_adv_src):
+            os.makedirs(recipes_adv_dest, exist_ok=True)
+            logging.info(f"Copying recipe advancements from {recipes_adv_src}")
+            
+            # For each selected recipe, find and copy its advancement file if it exists
+            recipe_advancements_copied = 0
+            for recipe_id in all_selected_recipes:
+                # If the recipe has a namespace, only process betterr recipes
+                if ":" in recipe_id:
+                    namespace, name = recipe_id.split(":", 1)
+                    if namespace != "betterr":
+                        continue
+                    recipe_id = name  # Use only the name part without namespace
+                
+                # Look for the recipe advancement file
+                recipe_adv_file = f"{recipe_id}.json"
+                recipe_adv_path = os.path.join(recipes_adv_src, recipe_adv_file)
+                
+                if os.path.exists(recipe_adv_path):
+                    dest_file = os.path.join(recipes_adv_dest, recipe_adv_file)
+                    shutil.copy2(recipe_adv_path, dest_file)
+                    recipe_advancements_copied += 1
+                    logging.info(f"Copied recipe advancement: {recipe_adv_file}")
+                else:
+                    logging.debug(f"No advancement file found for recipe: {recipe_id}")
+            
+            logging.info(f"Copied {recipe_advancements_copied} recipe advancement files")
+            advancements_copied += recipe_advancements_copied
         
         # Copy triggers advancements
         triggers_path = os.path.join(adv_src_base, "triggers")

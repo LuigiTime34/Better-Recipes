@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "group": "tdp.500.2:repair_anvil",
+    "group": "anvils",
     "pattern": [
         "aaa",
         "aba",
@@ -12,5 +12,6 @@
     },
     "result": {
         "id": "minecraft:chipped_anvil"
-    }
+    },
+    "category": "misc"
 }
