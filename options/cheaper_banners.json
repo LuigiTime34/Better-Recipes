@@ -1,0 +1,28 @@
+{
+    "display_name": "Cheaper Banners",
+    "description": "Makes all Banners require 2 carpet rather than 6 wool",
+    "source_folder": "minecraft",
+    "recipes": [
+        "blue_banner",
+        "black_banner",
+        "brown_banner",
+        "cyan_banner",
+        "gray_banner",
+        "green_banner",
+        "light_blue_banner",
+        "light_gray_banner",
+        "lime_banner",
+        "magenta_banner",
+        "orange_banner",
+        "pink_banner",
+        "purple_banner",
+        "red_banner",
+        "white_banner",
+        "yellow_banner"
+    ],
+    "tags": [
+        ""
+    ],
+    "image_path": "options/images/red_banner.png",
+	"category": "Convenience"
+}

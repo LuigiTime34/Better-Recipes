@@ -14,6 +14,8 @@
         "bamboo_button",
         "bamboo_pressure_plate",
         "bamboo_trapdoor",
+        "bamboo_stairs",
+        "bamboo_mosaic_stairs",
         "warped_button",
         "warped_pressure_plate",
         "warped_trapdoor",
@@ -37,7 +39,8 @@
         "spruce_trapdoor",
         "pale_oak_button",
         "pale_oak_pressure_plate",
-        "pale_oak_trapdoor"
+        "pale_oak_trapdoor",
+        "pale_oak_stairs"
     ],
     "tags": [
         null
