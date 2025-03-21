@@ -1,11 +1,11 @@
 {
     "parent": "minecraft:recipes/root",
     "criteria": {
-        "has_crimsom_roots": {
+        "has_crimson_roots": {
             "conditions": {
                 "items": [
                     {
-                        "items": "crimsom_roots"
+                        "items": "crimson_roots"
                     }
                 ]
             },
@@ -21,7 +21,7 @@
     "requirements": [
         [
             "has_the_recipe",
-            "has_crimsom_roots"
+            "has_crimson_roots"
         ]
     ],
     "rewards": {
